@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+{% block body %} 
+        <h1 align="center">Cadastrar Fornecedor</h1>
+        <br>
+        <!-- URL_FOR ROTA PARA O METODO CADASTRO-->
+        <form action="/fornecedor/cadastro" method="POST" align="center">
+
+            <table align="center">
+                <tr>
+                    <td>Nome</td>
+                    <td><input type="text" name="nomeFornecedor"></td>
+                </tr>
+                <tr>
+                    <td>Telefone</td>
+                    <td><input type="text" name="telefoneFornecedor"></td>
+                </tr>
+                <tr>
+                    <td>CPF/CNPJ</td>
+                    <td><input type="text" name="cpf_cnpjFornecedor"></td>
+                </tr>
+                <tr>
+                    <td>Tipo de fornecedor</td>
+                    <td><input type="radio" name="tipoFornecedor" value="Fisica" id="fisica"> Pessoa Fisica </td>
+                    <td><input type="radio" name="tipoFornecedor" value= "Juridica" id="juridica"> Pessoa Juridica</td>
+                </tr>
+                
+            </table><br>
+            <input type="submit" value="Cadastrar"></input>
+            
+        </form>
+        <br><a href="{{ url_for('fornecedorPage') }}">Voltar</a>
+{% endblock %}

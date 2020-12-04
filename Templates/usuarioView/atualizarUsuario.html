@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+{% block body %}   
+        <h1 align="center">Atualizar Usuário</h1>
+        <br>
+        <!-- URL_FOR ROTA PARA O METODO CADASTRO-->
+        <form method="POST" align="center">
+
+            <table align="center">
+                <tr>
+                    <td>E-mail</td>
+                    <td><input type="text" name="email" value="{{ usuario.email }}"></td>
+                </tr>
+                <tr>
+                    <td>Senha</td>
+                    <td><input type="password" name="senha" value="{{ usuario.senha }}"></td>
+                </tr>
+                <tr>
+                    <td>Administrador</td>
+                    <td align="left"><input type="checkbox" name="adm" value="{{ usuario.adm }}"></td>
+                </tr>
+
+            </table><br>
+            <input type="submit" value="Atualizar"></input>
+                      
+        </form>
+        <br><a href="{{ url_for('usuario') }}">Voltar</a>  
+{% endblock %}

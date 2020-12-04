@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+{% block body %}   
+        <h1 align="center">Menu de Fornecedor</h1>
+        <br>
+        <!-- URL_FOR é para uma rota -->
+        <nav>
+            <ul align="center">
+                <li><a href="{{ url_for('cadastrarFornecedores') }}">Cadastrar Fornecedores</a></li>
+                <li><a href="{{ url_for('listarFornecedores') }}">Listar Fornecedores</a></li>            
+            </ul>
+        </nav>
+        <br><a href="{{ url_for('index') }}">Voltar</a>
+{% endblock %}

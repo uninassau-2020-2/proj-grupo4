@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+{% block body %}
+        <h1 align="center">Lista de Vendas</h1>
+        <br>
+        <table border="4" align="center">
+            <tr>
+                <td align="center">Codigo da Venda</td>
+                <!-- PRODUTOS QUE FICARAM NA VENDA-->
+                <td align="center">Valor Total</td>
+                <td align="center">Quantidade de Produtos</td>
+                <td align="center">ID do Vendedor</td>
+                <td align="center">Excluir</td>
+                <!-- <td align="center">Atualizar</td> -->
+            </tr>
+
+            <!--FOR DE PESSOA EM PESSOAS-->
+            {% for venda in vendas %}
+            <tr>
+                <td align="center">{{ venda._codVenda }}</td>
+                <!-- PRODUTOS QUE FICARAM NA VENDA-->
+                <td align="center">{{ venda.valor_total }}</td>
+                <td align="center">{{ venda.qtd_produto }}</td>
+                <td align="center">{{ venda.id_vendedor }}</td>
+                <td align="center"><a href="/vendas/excluir/{{ venda._codVenda }}">X</a></td>
+                <!--<td align="center"><a href="/vendas/atualizar/{{ venda._codVenda }}">Atualizar</a></td> -->
+            </tr>
+            {% endfor %}
+        </table>
+        <br><a href="{{ url_for('vendaPage') }}">Voltar</a>
+{% endblock %}
+

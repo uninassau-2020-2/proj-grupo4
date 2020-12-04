@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+{% block body %}      
+        <h1 align="center">Menu de Usuários</h1>
+        <br>
+        <!-- URL_FOR é para uma rota -->
+        <nav>
+            <ul align="center">
+                <li><a href="{{ url_for('cadastrarUsuario') }}">Cadastrar Usuário</a></li>
+                <li><a href="{{ url_for('listaUsuario') }}">Listar Usuários</a></li>            
+            </ul>
+        </nav>
+        <br><a href="{{ url_for('index') }}">Voltar</a>
+{% endblock %}
